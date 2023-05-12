@@ -1,0 +1,12 @@
+#!/bin/bash
+#salmon='/home/yc/salmon-latest_linux_x86_64/bin/salmon'
+index=/mnt/e/salmon_test/lv_sig_index
+for fn in /mnt/e/rnaseq_data/clean/Sample_{1..15}A;
+do
+samp=`basename ${fn}`
+echo "Processing sample ${samp}"
+/home/yc/salmon-latest_linux_x86_64/bin/salmon quant -i $index -l A \
+         -1 ${fn}/${samp}_1.fq.gz \
+         -2 ${fn}/${samp}_2.fq.gz \
+         -p 10 --validateMappings -o quants/${samp}_quant
+done 
