@@ -1,6 +1,6 @@
 #!/bin/bash
 #salmon='/home/yc/salmon-latest_linux_x86_64/bin/salmon'
-index=/mnt/e/salmon_test/lv_sig_index
+index=/mnt/e/salmon_test/ref_index
 for fn in /mnt/e/rnaseq_data/clean/Sample_{1..15}A;
 do
 samp=`basename ${fn}`
